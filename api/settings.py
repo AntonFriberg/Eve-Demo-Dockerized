@@ -120,6 +120,5 @@ works = {
 # be accessible to the API consumer.
 DOMAIN = {
     'people': people,
-    'works': works,
-    'oe_build_start': oe_build_start,
+    'works': works
 }
