@@ -13,5 +13,3 @@ COPY requirements.txt /usr/share/api/requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . /usr/share/api/
-
-CMD flask run --host=0.0.0.0

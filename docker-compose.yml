@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  api:
+  base:
     build:
       context: .
       args:
@@ -9,18 +9,21 @@ services:
        - https_proxy
        - no_proxy
     image: user/api
+    container_name: api_base
+  api:
+    extends: 
+      service: base
     container_name: api_main
     ports:
       - "5000:5000"
-    volumes:
-      - ./.data/:/var/lib/dbdiffer
+    depends_on:
+      - base
+      - mongodb
     links:
       - mongodb
-    depends_on:
-      - mongodb
-
+    command: flask run --host=0.0.0.0
   mongodb:
     image: mongo:3.4
     container_name: api_db
-    expose: 
-      - "27017"
+    ports: 
+      - "27017:27017"

@@ -121,5 +121,4 @@ works = {
 DOMAIN = {
     'people': people,
     'works': works,
-    'oe_build_start': oe_build_start,
 }
