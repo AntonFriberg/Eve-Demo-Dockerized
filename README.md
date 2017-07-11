@@ -21,25 +21,9 @@ What things you need to install the software and how to install them
 * docker >= 17.06.0-ce
 * docker-compose >= 1.14.0
 
-## Running the tests
+## Using the api
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+For an example of a client application that uses the api see the included `client.py` file. It deletes all entries and inserts example data. 
 
 ## Deployment
 
