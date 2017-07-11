@@ -120,5 +120,5 @@ works = {
 # be accessible to the API consumer.
 DOMAIN = {
     'people': people,
-    'works': works,
+    'works': works
 }
