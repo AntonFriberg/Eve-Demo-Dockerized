@@ -1,27 +1,30 @@
-version: '2'
-
+version: '3'
 services:
-  base:
+  api:
     build:
       context: .
+      dockerfile: ./api/Dockerfile
       args:
        - http_proxy
        - https_proxy
        - no_proxy
-    image: user/api
-    container_name: api_base
-  api:
-    extends: 
-      service: base
-    container_name: api_main
-    ports:
+    environment: 
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+      FLASK_APP: run.py
+      FLASK_DEBUG: 1
+    image: api-dev
+    container_name: api_dev
+    ports: 
       - "5000:5000"
     depends_on:
-      - base
       - mongodb
     links:
       - mongodb
+    volumes:
+      - "./api:/usr/src/app:ro"
     command: flask run --host=0.0.0.0
+  
   mongodb:
     image: mongo:3.4
     container_name: api_db

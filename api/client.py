@@ -83,6 +83,8 @@ def post_people():
             for person in response['_items']:
                 if person['_status'] == "OK":
                     valids.append(person['_id'])
+    else:
+        r.raise_for_status()
 
     return valids
 
@@ -100,6 +102,8 @@ def post_works(ids):
 
     r = perform_post('works', json.dumps(works))
     print("'works' posted", r.status_code)
+    if r.status_code != 201:
+        r.raise_for_status()
 
 
 def perform_post(resource, data):
@@ -125,5 +129,5 @@ def endpoint(resource):
 
 if __name__ == '__main__':
     delete()
-    ids = post_people()
-    post_works(ids)
+    people = post_people()
+    post_works(people)
