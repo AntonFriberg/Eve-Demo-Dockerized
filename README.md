@@ -35,15 +35,18 @@ Deploy in production environment at your own risk. Consult official Eve, Flask a
 * [MongoDB](https://www.mongodb.com/) - Database used by default by Eve
 * [Docker](https://rometools.github.io/rome/) - Software container platform
 * [Docker Compose](https://docs.docker.com/compose/) - Easy management of Docker containers
+* [tiangolo/uwsgi-nginx-flask-docker](https://github.com/tiangolo/uwsgi-nginx-flask-docker) - Safer deployment with nginx and flask
 
 ## Authors
 
 * **Eve Developers** - *Initial work* - [Eve-Demo](https://github.com/pyeve/eve-demo/)
+* **Sebastián Ramírez** - *Docker Image* - [Profile](https://github.com/tiangolo)
 * **Anton Friberg** - *Dockerization* - [Profile](https://github.com/AntonFriberg/)
 
 ## License
 
 This project is based on previous work see [LICENSE](LICENSE) file for more information.
+Also note the docker image [licence](https://github.com/tiangolo/uwsgi-nginx-flask-docker/blob/master/LICENSE.txt).
 
 ## Acknowledgments
 

@@ -8,25 +8,17 @@ services:
        - http_proxy
        - https_proxy
        - no_proxy
-    environment: 
-      LC_ALL: C.UTF-8
-      LANG: C.UTF-8
-      FLASK_APP: run.py
-      FLASK_DEBUG: 1
-    image: api-dev
-    container_name: api_dev
+    image: api-deployment-image
+    container_name: api-container
     ports: 
-      - "5000:5000"
+      - "80:80"
     depends_on:
       - mongodb
     links:
       - mongodb
-    volumes:
-      - "./api:/usr/src/app:ro"
-    command: flask run --host=0.0.0.0
   
   mongodb:
     image: mongo:3.4
-    container_name: api_db
-    ports: 
-      - "27017:27017"
+    container_name: api-db-container
+    expose:
+      - "27017"

@@ -24,7 +24,7 @@ import random
 import requests
 
 
-ENTRY_POINT = 'localhost:5000'
+ENTRY_POINT = '127.0.0.1:80'
 
 
 def post_people():
