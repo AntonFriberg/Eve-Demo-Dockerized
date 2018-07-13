@@ -18,8 +18,8 @@ docker-compose up
 
 What things you need to install the software and how to install them
 
-* docker >= 17.06.0-ce
-* docker-compose >= 1.14.0
+* docker >= 18.03.1-ce
+* docker-compose >= 1.20
 
 ## Using the api
 
@@ -32,15 +32,15 @@ Deploy in production environment at your own risk. Consult official Eve, Flask a
 ## Built With
 
 * [Eve](http://python-eve.org) - The web framework used for easy rest-api development
-* [MongoDB](https://www.mongodb.com/) - Database used by default by Eve
+* [MongoDB](https://www.mongodb.com/) - Document-oriented Database
 * [Docker](https://rometools.github.io/rome/) - Software container platform
 * [Docker Compose](https://docs.docker.com/compose/) - Easy management of Docker containers
-* [tiangolo/uwsgi-nginx-flask-docker](https://github.com/tiangolo/uwsgi-nginx-flask-docker) - Safer deployment with nginx and flask
+* [Python Docker Image](https://hub.docker.com/_/python/) - Official Python Docker Image
+* [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) - Deployment Server
 
 ## Authors
 
 * **Eve Developers** - *Initial work* - [Eve-Demo](https://github.com/pyeve/eve-demo/)
-* **Sebastián Ramírez** - *Docker Image* - [Profile](https://github.com/tiangolo)
 * **Anton Friberg** - *Dockerization* - [Profile](https://github.com/AntonFriberg/)
 
 ## License

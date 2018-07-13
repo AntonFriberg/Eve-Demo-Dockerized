@@ -6,19 +6,17 @@
     Settings file for our api.
 """
 
-import os
+MONGO_URI = 'mongodb://{host}:{port}/{database}'.format(
+    host='db',
+    port=27017,
+    database='api'
+)
 
-# We want to easily run our API both locally and on production. If running on
-# production, sensible DB connection settings are stored in environment vars.
-MONGO_HOST = os.environ.get('MONGO_HOST', 'mongodb')
-MONGO_PORT = os.environ.get('MONGO_PORT', 27017)
-#MONGO_USERNAME = os.environ.get('MONGO_USERNAME', 'user')
-#MONGO_PASSWORD = os.environ.get('MONGO_PASSWORD', 'user')
-MONGO_DBNAME = os.environ.get('MONGO_DBNAME', 'api')
-
-# Toggle XML and JSON functionality
-XML = True
-JSON = True
+# Toggle XML and JSON renderers
+RENDERERS = [
+    'eve.render.JSONRenderer',
+    #'eve.render.XMLRenderer'
+]
 
 # Enable reads (GET), inserts (POST) and DELETE for resources/collections
 # (if you omit this line, the API will default to ['GET'] and provide
